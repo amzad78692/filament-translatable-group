@@ -1,0 +1,71 @@
+{
+    "name": "amzad/filament-translatable-group",
+    "description": "Simplifying managing json based translation columns using grouped fields",
+    "keywords": [
+        "amzad",
+        "laravel",
+        "filament",
+        "translation",
+        "filament-translatable-group"
+    ],
+    "homepage": "https://github.com/amzad/filament-translatable-group",
+    "support": {
+        "issues": "https://github.com/amzad/filament-translatable-group/issues",
+        "source": "https://github.com/amzad/filament-translatable-group"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amzad",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "filament/forms": "^4.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amzad\\FilamentTranslatableGroup\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amzad\\FilamentTranslatableGroup\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "all": [
+            "@format",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Amzad\\FilamentTranslatableGroup\\FilamentTranslatableGroupServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}
